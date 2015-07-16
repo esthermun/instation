@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	  <meta charset="utf-8">
+	  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <title>Instation</title>
+	  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	  <%= csrf_meta_tags %>
+	</head>
+	<body>
+	
+	<!-- built in messages for errors -->
+	
+	<%= notice %><%= alert %>
+	
+
+	<nav class="navbar navbar-inverse navbar-fixed-top custom-nav">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-10 col-md-offset-1">
+					<a class="navbar-brand" href="">Instation</a>
+
+				<!-- make all links available-->
+					<% if user_signed_in? %>
+						<button type="button" class="btn btn-warning navbar-btn navbar-right">
+							<%= link_to "Sign Out", destroy_user_session_path, method: :delete %> 
+						</button>
+						
+							
+					<% else %>
+						<button type="button" class="btn btn-warning navbar-btn navbar-right">
+							<%= link_to "Sign In", new_user_session_path %>
+						</button>
+						<button type="button" class="btn btn-warning navbar-btn navbar-right">
+							<%= link_to "Sign Up", new_user_registration_path %>
+						</button>
+					<% end %>
+				</div>
+			</div>	
+		</div>
+	</nav>
+	
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-10 col-md-offset-1">
+				<%= yield %>
+
+			</div>
+		</div>
+	</div>
+	
+
+	</body>
+</html>
