@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+#update image file
 gem 'paperclip', '~>4.3'
 #form set up
 gem 'devise'
