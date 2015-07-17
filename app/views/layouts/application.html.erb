@@ -25,6 +25,9 @@
 				<!-- make all links available-->
 					<% if user_signed_in? %>
 						<li>
+							<%= link_to "Create Post", posts_path %>
+						</li>
+						<li>
 							<%= link_to "Sign Out", destroy_user_session_path, method: :delete %> 
 						</li>
 						
@@ -47,6 +50,8 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-10 col-md-offset-1">
+				
+				
 				<%= yield %>
 
 			</div>

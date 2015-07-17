@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
-  #references :posts 
-  get 'posts/new'
+  
+  #get 'posts/new'
 
   # get 'posts/create'
 
   # get 'posts/show'
 
   root to: "welcome#index"
+  resources :posts 
   get 'welcome/index'
 
   #get '/secret' => 'welcome#secret'

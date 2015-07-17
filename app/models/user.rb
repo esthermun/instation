@@ -6,4 +6,5 @@ class User < ActiveRecord::Base
 
   #has_one
   has_many :posts
+
 end
