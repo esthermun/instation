@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'posts/new'
+
+  get 'posts/create'
+
+  get 'posts/show'
+
   root to: "welcome#index"
   #get 'welcome/index'
 
