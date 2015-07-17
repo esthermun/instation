@@ -1,2 +1,11 @@
 <h1>Posts#create</h1>
 <p>Find me in app/views/posts/create.html.erb</p>
+
+
+<%= form_for @post url: {action: "show"} do |f| %>
+	<%= label_tag :description, "Say: " %>
+	<%= f.text_field(:description)%>
+	<%= label_tag :picture, "Add: " %>
+	<%= f.file_field :picture %>
+
+<% end %>

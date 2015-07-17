@@ -5,6 +5,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   #has_one
-  has_many :posts
+  has_many :posts, dependent: :destroy # this will destroy all the posts of the user when user is destroyed
 
 end
