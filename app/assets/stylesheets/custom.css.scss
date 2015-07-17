@@ -1,6 +1,8 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+$tt_col: #f5f2f7;
+
 body {
 	padding-top: 70px;
 }
@@ -8,17 +10,24 @@ body {
 	background-color: #403f61;
 	
 	.navbar-brand{
-		color:#f5f2f7;
+		color:$tt_col;
 	}
 	
 	ul.navbar-nav{
 		
 		li a{
 		text-decoration:none;
-		color: #f5f2f7;
+		color: $tt_col;
 		}
 
 	}
 	
 }
 
+.postContainer{
+	form{
+		.btn-info{
+			float: right;
+		}
+	}	
+}

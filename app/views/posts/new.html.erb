@@ -1,2 +1,22 @@
-<h1>Posts#new</h1>
-<p>Find me in app/views/posts/new.html.erb</p>
+<div class="postContainer">
+	<div class="row">
+		<div class="col-sm-12 col-md-6">
+			<h1>Create a Post</h1>
+			<p>What's in your mind?</p>
+
+			<%= form_for @post, url: {action: "create"} do |f| %>
+				<div class="form-group">
+					<%= label_tag :description, "Say it!: " %>
+					<%= f.text_area(:description, :class => "form-control") %>
+				</div>
+				<div class="form-group">
+					<%= label_tag :picture, "Add: " %>
+					<%= f.file_field :picture%>
+				</div>
+
+				<%= f.submit :class => "btn btn-info" %>
+			<% end %>
+
+		</div>
+	</div>
+</div>
