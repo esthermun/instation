@@ -6,12 +6,14 @@ class PostsController < ApplicationController
   def create
   	@post = Post.new(post_params)
   	logger.debug(params)
+  	@post.user_id = current_user.id
   	@post.save
   	redirect_to @post
   end
 
   def show
-  	@post.find(params[:id])
+     #@post = Post.find(params[:id])  #keep in mind what you are trying to get!!
+     @posts = Post.all
   end
 
   private

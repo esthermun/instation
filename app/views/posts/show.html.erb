@@ -1,21 +1,23 @@
-<h1>Posts#show</h1>
+<h1>Why do you want to see them?</h1>
 <p>Find me in app/views/posts/show.html.erb</p>
 
-<%= image_tag @post.picture.url %>
-<%= image_tag @post.picture.url(:medium)%>
-<%= image_tag @post.picture.url(:thumb) %>
 
-<ul>
+<div class="row">
 	<% @posts.each do |p| %>
-		<li>
-			Created by: <%= p.username %>
-		</li>
-		<li>
-			<img src="<%= p.picture.url %>" />
-		</li>
-		<li>
-			<%= p.description %>
-		</li>
+		
+		<div class="col-sm-12 col-md-4 postBox">
+			<div class="thumbnail">
+				<%= image_tag p.picture.url(:medium)%>
+				<div class="caption">
+					<h3> <%= p.description %> </h3>
+					<p> Created by: <%= p.user_id %> </p>
+				</div>
+					<!-- delete and edit buttons here -->
+			</div>
+		</div>
+		
+	<% end %>	
+</div>
 
-	<% end %>
-</ul>
+
+
