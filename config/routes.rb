@@ -1,14 +1,15 @@
 Rails.application.routes.draw do
+  #references :posts 
   get 'posts/new'
 
-  get 'posts/create'
+  # get 'posts/create'
 
-  get 'posts/show'
+  # get 'posts/show'
 
   root to: "welcome#index"
-  #get 'welcome/index'
+  get 'welcome/index'
 
-  get '/secret' => 'welcome#secret'
+  #get '/secret' => 'welcome#secret'
 
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.

@@ -5,7 +5,9 @@ class PostsController < ApplicationController
 
   def create
   	@post = Post.new(post_params)
+  	logger.debug(params)
   	@post.save
+  	redirect_to '/posts'
   end
 
   def show
