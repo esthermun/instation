@@ -17,24 +17,30 @@
 					<div class="col-md-10 col-md-offset-1">
 						<a class="navbar-brand" href="">Instation</a>
 						<ul class="nav navbar-nav navbar-right">
-					<!-- make all links available-->
-						<% if user_signed_in? %>
-							<li>
-								<%= link_to "Create Post", new_post_path %>
-							</li>
-							<li>
-								<%= link_to "Sign Out", destroy_user_session_path, method: :delete %> 
-							</li>
-							
+
+							<!-- built in messages for errors -->
+							<%= notice %><%= alert %>
+
+							<!-- make all links available-->
+							<% if user_signed_in? %>
+								<li>
+									<%= link_to "Create Post", new_post_path %>
+								</li>
+								<li>
+									<%= link_to "Edit Profile", edit_user_registration =>
+								</li>
+								<li>
+									<%= link_to "Sign Out", destroy_user_session_path, method: :delete %> 
+								</li>
 								
-						<% else %>
-							<li>
-								<%= link_to "Sign In", new_user_session_path %>
-							</li>
-							<li>
-								<%= link_to "Sign Up", new_user_registration_path %>
-							</li>
-						<% end %>
+							<% else %>
+								<li>
+									<%= link_to "Sign In", new_user_session_path %>
+								</li>
+								<li>
+									<%= link_to "Sign Up", new_user_registration_path %>
+								</li>
+							<% end %>
 						</ul>
 					</div>
 				</div>	
@@ -44,8 +50,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-10 col-md-offset-1">
-				<!-- built in messages for errors -->
-				<%= notice %><%= alert %>
+				
 				
 				<%= yield %>
 
