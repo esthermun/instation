@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   
+  get 'profiles/new'
+
+  get 'profiles/show'
+
   #get 'posts/new'
 
   # get 'posts/create'
