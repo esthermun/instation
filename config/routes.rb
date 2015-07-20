@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get 'profile/new'
+
   #get 'posts/new'
 
   # get 'posts/create'
